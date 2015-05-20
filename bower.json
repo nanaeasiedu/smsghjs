@@ -1,0 +1,23 @@
+{
+  "name": "smsghjs",
+  "main": "index.js",
+  "version": "0.0.0",
+  "authors": [
+    "Eugene Asiedu <ngene84@gmail.com>"
+  ],
+  "description": "a smsgh client",
+  "keywords": [
+    "smsgh",
+    "sms",
+    "ghana"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}

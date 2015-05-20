@@ -1,0 +1,30 @@
+{
+  "name": "smsghjs",
+  "version": "1.0.0",
+  "description": "an smsgh client",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ngenerio/smsgh"
+  },
+  "author": "Eugene Asiedu <ngene84@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ngenerio/smsgh/issues"
+  },
+  "homepage": "https://github.com/ngenerio/smsgh",
+  "standard": {
+    "ignore": [
+      "node_modules/"
+    ]
+  },
+  "dependencies": {
+    "superagent": "^1.2.0"
+  },
+  "devDependencies": {
+    "uglifyify": "^3.0.1"
+  }
+}
