@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build-dev": "browserify -t uglifyify index.js -o dist/smsgh-dev.js",
     "build": "browserify -g uglifyify index.js -o dist/smsgh.js"
   },
   "repository": {
@@ -19,7 +20,7 @@
   "homepage": "https://github.com/ngenerio/smsgh",
   "standard": {
     "ignore": [
-      "node_modules/"
+      "dist/**"
     ]
   },
   "dependencies": {
