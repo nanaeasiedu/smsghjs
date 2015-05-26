@@ -4,9 +4,9 @@
   "description": "an smsgh client",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build-dev": "browserify -t uglifyify index.js -o dist/smsgh-dev.js",
-    "build": "browserify -g uglifyify index.js -o dist/smsgh.js"
+    "test": "standard && tape test/*.js",
+    "build-debug": "browserify index.js -o dist/smsgh.debug.js",
+    "build": "browserify -g uglifyify index.js -o dist/smsgh.min.js"
   },
   "repository": {
     "type": "git",
@@ -24,10 +24,12 @@
     ]
   },
   "dependencies": {
-    "superagent": "^1.2.0",
-    "browserify": "^8.1.1"
+    "superagent": "^1.2.0"
   },
   "devDependencies": {
+    "browserify": "^10.2.0",
+    "standard": "^3.11.0",
+    "tape": "^4.0.0",
     "uglifyify": "^3.0.1"
   }
 }
