@@ -7,4 +7,6 @@ This library is not yet complete. Check out the [smsgh developers portal](http:/
 
 No test has been written yet.
 
-I'm using the [feross/standard](https://github.com/feross/standard) way to code the javascript.
+SMSGHJS uses [JavaScript Standard Style](https://github.com/feross/standard)
+
+[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
