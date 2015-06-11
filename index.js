@@ -14,7 +14,7 @@ function SMSGH (clientId, clientSecret, apiKey) {
   this.clientSecret = clientSecret
   this.apiKey = apiKey
   this.versionNumber = 'v3'
-  this.messageApi = new SendMessage(clientId, clientSecret)
+  this.messageApi = new SendMessage(clientId, clientSecret, this.versionNumber)
   if (this.apiKey) this.topUpApi = new TopUp(apiKey)
 }
 
@@ -24,6 +24,7 @@ SMSGH.prototype.setContextPath = function (versionNumber) {
   }
 
   this.versionNumber = versionNumber
+  this.messageApi.setContextPath(this.versionNumber)
 }
 
 SMSGH.TopUp = TopUp
