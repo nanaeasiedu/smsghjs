@@ -6,7 +6,7 @@ var Message = require('./lib/message')
 function SMSGH (clientId, clientSecret, apiKey) {
   if (!(this instanceof SMSGH)) return new SMSGH(clientId, clientSecret, apiKey)
 
-  if (clientId === undefined || clientSecret === undefined) {
+  if (!clientId || !clientSecret) {
     throw new SMSGHError('Make sure clientid and clientSecret are both defined')
   }
 
