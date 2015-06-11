@@ -6,7 +6,8 @@
   "scripts": {
     "test": "standard && tape test/*.js",
     "build-debug": "browserify index.js -o dist/smsgh.debug.js",
-    "build": "browserify -g uglifyify index.js -o dist/smsgh.min.js"
+    "build": "browserify -g uglifyify index.js -o dist/smsgh.min.js",
+    "deploy": "npm run build && git push"
   },
   "repository": {
     "type": "git",
