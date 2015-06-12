@@ -1,4 +1,7 @@
 #SMSGHJS
+
+[![Build Status](https://secure.travis-ci.org/ngenerio/smsghjs.png?branch=master)](https://travis-ci.org/ngenerio/smsghjs)
+
 JavaScript library that interfaces that interfaces with the SMSGH api
 
 Still in development. You can check out the code and give reviews. I would appreciate that a lot. If there is any particular functionality you would like me to add just open an issue and I would check it out.
