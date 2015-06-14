@@ -6,14 +6,13 @@
   "scripts": {
     "test": "standard && tape test/*.js",
     "build-debug": "browserify index.js -o dist/smsgh.debug.js",
-    "build": "browserify -g uglifyify index.js -o dist/smsgh.min.js",
-    "deploy": "npm run build && git push"
+    "build": "browserify -g uglifyify index.js -o dist/smsgh.min.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/ngenerio/smsgh"
   },
-  "author": "Eugene Asiedu <ngene84@gmail.com>",
+  "author": "Eugene Asiedu <ngene84@gmail.com> (https://github.com/ngenerio)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ngenerio/smsgh/issues"
