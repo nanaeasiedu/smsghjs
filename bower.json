@@ -1,11 +1,11 @@
 {
   "name": "smsghjs",
+  "version": "0.1.0",
+  "description": "a smsgh client",
   "main": "index.js",
-  "version": "0.0.0",
   "authors": [
     "Eugene Asiedu <ngene84@gmail.com>"
   ],
-  "description": "a smsgh client",
   "keywords": [
     "smsgh",
     "sms",
