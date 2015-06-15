@@ -33,6 +33,30 @@ myTopUpObj.topItUp({
   // do something with response
 })
 ```
+
+###SMS API
+To use the sms api, you have to get your client id and client secret.
+
+
+```js
+var SMSGH = require('smsghjs')
+var SendMessage = SMSGH.SendMessage
+var Message = SMSGH.Message
+
+var smsApi = new SendMessage(CLIENT_ID, CLIENT_SECRET, API_VERSION)
+var msgObj = Message({
+  from: 'SMSGHJS',
+  to: '2332000000000',
+  content: 'Hello World'
+})
+
+smsApi.send(msgObj, function (err, res) {
+  // handle the error
+  if (err) {}
+  // do something with response
+})
+
+```
 SMSGHJS uses [JavaScript Standard Style](https://github.com/feross/standard)
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
