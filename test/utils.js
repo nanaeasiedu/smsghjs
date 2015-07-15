@@ -38,3 +38,11 @@ test('merge test', function (t) {
 
   t.deepEqual(utils.merge(objA, objB), mergedObj, 'merge works')
 })
+
+test('validate phone numbers test', function (t) {
+  t.plan(3)
+
+  t.ok(utils.isValidTelephoneNumber('0272271893'), 'telephone number is valid')
+  t.ok(utils.isValidTelephoneNumber('233272271893'), 'telephone number is still valid')
+  t.notOk(utils.isValidTelephoneNumber('33272271893'), 'telephone number is so invalid')
+})
