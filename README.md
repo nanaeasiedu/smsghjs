@@ -2,11 +2,17 @@
 
 [![Build Status](https://secure.travis-ci.org/ngenerio/smsghjs.png?branch=master)](https://travis-ci.org/ngenerio/smsghjs)
 
-JavaScript library that interfaces with the SMSGH api
+The Standard JavaScript SDK for SMSGH API.
+
+It includes support for the Unified Services Payment of the SMSGH API.
+
+SMSGHJS uses [JavaScript Standard Style](https://github.com/feross/standard)
+
+[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
 Still in development. You can check out the code and give reviews. I would appreciate that a lot. If there is any particular functionality you would like me to add just open an issue and I would check it out.
 
-This library is not yet complete. Check out the [smsgh developers portal](http://developers.smsgh.com) to see all the related api. Only the message and top up api have been implemented.
+This library is not yet complete. Check out the [smsgh developers portal](http://developers.smsgh.com) to see all the related API. Only the message and top up API have been implemented.
 
 Tests are being written
 
@@ -40,23 +46,15 @@ To use the sms api, you have to get your client id and client secret.
 
 ```js
 var SMSGH = require('smsghjs')
-var SendMessage = SMSGH.SendMessage
-var Message = SMSGH.Message
+var smsgh = new SMSGH('eugene', 'asiedu')
 
-var smsApi = new SendMessage(CLIENT_ID, CLIENT_SECRET, API_VERSION)
-var msgObj = Message({
-  from: 'SMSGHJS',
-  to: '2332000000000',
-  content: 'Hello World'
-})
-
-smsApi.send(msgObj, function (err, res) {
-  // handle the error
-  if (err) {}
-  // do something with response
-})
-
+smsgh.setContextPath('v3')
+smsgh.messageApi.send(
+  new SMSGH.Message({from: 'Me', to : '233272271893', content: 'Hello World'}),
+  function (err, res) {
+    if (err) // handle the Error
+    // do something with the response
+  })
 ```
-SMSGHJS uses [JavaScript Standard Style](https://github.com/feross/standard)
 
-[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+Made with love by [Eugene Asiedu](https://github.com/ngenerio) in Ghana.
