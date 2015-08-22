@@ -1,6 +1,6 @@
 {
   "name": "smsghjs",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "An SMSGH API JavaScript client library",
   "main": "index.js",
   "scripts": {
