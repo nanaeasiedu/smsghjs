@@ -47,11 +47,15 @@ To use the sms api, you have to get your client id and client secret.
 ```js
 var SMSGH = require('smsghjs')
 var Message = SMSGH.Message
-// eugene is your `clientId` and asiedu is `clientSecret` all from SMSGH
-var smsgh = new SMSGH('eugene', 'asiedu')
 
 smsgh.setContextPath('v3')
-smsgh.messageApi.send(new Message({from: 'Me', to : '233272271893', content: 'Hello World'}), function (err, res) {
+
+// Get `clientId` and `clientSecret` from SMSGH
+var smsgh = new SMSGH(clientid, clientSecret)
+var newMessage = new Message({from: 'Me', to : '233272271893', content: 'Hello World'})
+
+
+smsgh.messageApi.send(newMessage, function (err, res) {
     if (err) // handle the Error
     // do something with the response
   })
