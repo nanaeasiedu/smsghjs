@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ngenerio/smsgh"
+    "url": "https://github.com/ngenerio/smsghjs"
   },
   "author": "Eugene Asiedu <ngene84@gmail.com> (https://github.com/ngenerio)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ngenerio/smsgh/issues"
+    "url": "https://github.com/ngenerio/smsghjs/issues"
   },
-  "homepage": "https://github.com/ngenerio/smsgh",
+  "homepage": "https://github.com/ngenerio/smsghjs",
   "standard": {
     "ignore": [
       "dist/**"
