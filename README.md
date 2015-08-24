@@ -28,7 +28,7 @@ var TopUp = require('smsghjs').TopUp
 var myTopUpObj = new TopUp(MYAPIKEY)
 
 myTopUpObj.topItUp({
-  phone: '2332000000000',
+  phone: '233270000000',
   network: 'tigo',
   lineType: 0,
   amount: 5,
@@ -48,13 +48,11 @@ To use the sms api, you have to get your client id and client secret.
 var SMSGH = require('smsghjs')
 var Message = SMSGH.Message
 
-smsgh.setContextPath('v3')
-
 // Get `clientId` and `clientSecret` from SMSGH
 var smsgh = new SMSGH(clientid, clientSecret)
+smsgh.setContextPath('v3')
+
 var newMessage = new Message({from: 'Me', to : '233272271893', content: 'Hello World'})
-
-
 smsgh.messageApi.send(newMessage, function (err, res) {
     if (err) // handle the Error
     // do something with the response
