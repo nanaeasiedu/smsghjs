@@ -2,32 +2,43 @@
 
 [![Build Status](https://secure.travis-ci.org/ngenerio/smsghjs.png?branch=master)](https://travis-ci.org/ngenerio/smsghjs)
 
-The Standard JavaScript SDK for SMSGH API.
-
-It includes support for the Unified Services Payment of the SMSGH API.
-
 SMSGHJS uses [JavaScript Standard Style](https://github.com/feross/standard)
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
+The Standard JavaScript SDK for SMSGH API.
+
+
 Still in development. You can check out the code and give reviews. I would appreciate that a lot. If there is any particular functionality you would like me to add just open an issue and I would check it out.
 
-This library is not yet complete. Check out the [smsgh developers portal](http://developers.smsgh.com) to see all the related API. Only the message and top up API have been implemented.
+Check out the [smsgh developers portal](http://developers.smsgh.com) to see all the related API. It includes support for the Unified Services Payment, MESSAGING and TOP UP of the SMSGH API.
 
-Tests are being written
+### Documentation
 
-###TOPUP
+#### Create an `SMSGHJS` instance
 
-To get started you need an api key from [smsgh](http://smsgh.com) to use it.
+```javascript
+var SMSGH = require('smsghjs');
 
-Create a new `TopUp` object with the `apiKey` and top up some number with it
+// get `clientId` and `clientSecret` from SMSGH
+// `topupApiKey` is optional
+// `uspToken` is optional
+var newSMSGH  = new SMSGH({
+  clientId: [clientId],
+  clientSecret: [clientSecret],
+  topupApiKey: [topupApiKey],
+  uspToken: [uspToken]
+})
+
+newSMSGH.setContextPath('v3')
+```
+
+#### TOPUP
+
+If you provided the `topupApiKey` when you were initialising `newSMSGH`, then the top up API will be made available.
 
 ```js
-var TopUp = require('smsghjs').TopUp
-// replace MYAPIKEY with the api key given you by SMSGH
-var myTopUpObj = new TopUp(MYAPIKEY)
-
-myTopUpObj.topItUp({
+newSMSGH.topUpApi.topItUp({
   phone: '233270000000',
   network: 'tigo',
   lineType: 0,
@@ -40,23 +51,21 @@ myTopUpObj.topItUp({
 })
 ```
 
-###SMS API
-To use the sms api, you have to get your client id and client secret.
-
+#### SMS API
+This section shows how to use the SMS API
 
 ```js
-var SMSGH = require('smsghjs')
 var Message = SMSGH.Message
-
-// Get `clientId` and `clientSecret` from SMSGH
-var smsgh = new SMSGH(clientid, clientSecret)
-smsgh.setContextPath('v3')
-
 var newMessage = new Message({from: 'Me', to : '233272271893', content: 'Hello World'})
-smsgh.messageApi.send(newMessage, function (err, res) {
+
+newSMSGH.messageApi.send(newMessage, function (err, res) {
     if (err) // handle the Error
     // do something with the response
-  })
+})
 ```
+
+#### USP API
+
+Docs coming up soon....
 
 Made with ❤ by [Eugene Asiedu](https://twitter.com/ngenerio) in Ghana.
