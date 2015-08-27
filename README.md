@@ -62,6 +62,26 @@ newSMSGH.messageApi.send(newMessage, function (err, res) {
     if (err) // handle the Error
     // do something with the response
 })
+
+// Send a quick message
+newSMSGH.messageApi.sendQuickMessage('Me', '233272271893', 'Hello World', function (err, res) {})
+
+// Send a scheduled message
+var scheduledMessage = new Message({from: 'Me', to : '233272271893', content: 'Hello World', time: '2014-01-01 10:00:00'})
+newSMSGH.messageApi.sendScheduledMessage(scheduledMessage, function (err, res) {})
+
+// Get the details of a message
+// Provide `messageId` as first argument
+newSMSGH.messageApi.getMessage('6f19395db2fb497ea4ebd1e218dd3e4c', function (err, res) {})
+
+// Query the message API
+newSMSGH.messageApi.queryMessage({index: 100, limit: 2}, function (err, res){})
+
+// Reschedule a message
+newSMSGH.messageApi.rescheduleMessage('6f19395db2fb497ea4ebd1e218dd3e4c', '2014-01-01 05:00:00', function (err, res) {})
+
+// Cancel a message
+newSMSGH.messageAPI.cancelMessage('6f19395db2fb497ea4ebd1e218dd3e4c', function (err, res) {})
 ```
 
 #### USP API
