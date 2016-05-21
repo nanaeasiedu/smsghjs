@@ -27,6 +27,7 @@ test('toJSON method test', function (t) {
   t.deepEqual(new Message(opts).toJSON(), {
     From: 'SMSGHJS',
     To: '+233252271893',
+    Direction: 'out',
     Content: 'Hello World',
     Type: '0'
   })
