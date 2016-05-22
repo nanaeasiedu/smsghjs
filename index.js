@@ -9,7 +9,7 @@ function SMSGH (opts) {
   if (!(this instanceof SMSGH)) return new SMSGH(opts)
 
   if (!opts.clientId || !opts.clientSecret) {
-    throw new SMSGHError('Make sure clientid and clientSecret are both defined')
+    throw new SMSGHError('`clientId` or `clientSecret` is undefined in the options provided')
   }
 
   this.auth = new Auth(opts.clientId, opts.clientSecret)
