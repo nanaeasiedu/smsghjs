@@ -23,22 +23,24 @@ var SMSGH = require('smsghjs');
 // get `clientId` and `clientSecret` from SMSGH
 // `topupApiKey` is optional
 // `uspToken` is optional
-var newSMSGH  = new SMSGH({
+var sms  = new SMSGH({
   clientId: [clientId],
   clientSecret: [clientSecret],
   topupApiKey: [topupApiKey],
   uspToken: [uspToken]
 })
 
-newSMSGH.setContextPath('v3')
+sms.setContextPath('v3')
 ```
 
 #### TOPUP
 
-If you provided the `topupApiKey` when you were initialising `newSMSGH`, then the top up API will be made available.
+## NOTE: The topup functionality will be deprecated soon. The same functionality is provided in the USP.
+
+If you provided the `topupApiKey` when you were initialising `sms`, then the top up API will be made available.
 
 ```js
-newSMSGH.topUpApi.topItUp({
+sms.topUp.topItUp({
   phone: '233270000000',
   network: 'tigo',
   lineType: 0,
@@ -58,30 +60,30 @@ This section shows how to use the SMS API
 var Message = SMSGH.Message
 var newMessage = new Message({from: 'Me', to : '233272271893', content: 'Hello World'})
 
-newSMSGH.messageApi.send(newMessage, function (err, res) {
+sms.messaging.send(newMessage, function (err, res) {
     if (err) // handle the Error
     // do something with the response
 })
 
 // Send a quick message
-newSMSGH.messageApi.sendQuickMessage('Me', '233272271893', 'Hello World', function (err, res) {})
+sms.messaging.sendQuickMessage('Me', '233272271893', 'Hello World', function (err, res) {})
 
 // Send a scheduled message
 var scheduledMessage = new Message({from: 'Me', to : '233272271893', content: 'Hello World', time: '2014-01-01 10:00:00'})
-newSMSGH.messageApi.sendScheduledMessage(scheduledMessage, function (err, res) {})
+sms.messaging.sendScheduledMessage(scheduledMessage, function (err, res) {})
 
 // Get the details of a message
 // Provide `messageId` as first argument
-newSMSGH.messageApi.getMessage('6f19395db2fb497ea4ebd1e218dd3e4c', function (err, res) {})
+sms.messaging.getMessage('6f19395db2fb497ea4ebd1e218dd3e4c', function (err, res) {})
 
 // Query the message API
-newSMSGH.messageApi.queryMessage({index: 100, limit: 2}, function (err, res){})
+sms.messaging.queryMessage({index: 100, limit: 2}, function (err, res){})
 
 // Reschedule a message
-newSMSGH.messageApi.rescheduleMessage('6f19395db2fb497ea4ebd1e218dd3e4c', '2014-01-01 05:00:00', function (err, res) {})
+sms.messaging.rescheduleMessage('6f19395db2fb497ea4ebd1e218dd3e4c', '2014-01-01 05:00:00', function (err, res) {})
 
 // Cancel a message
-newSMSGH.messageAPI.cancelMessage('6f19395db2fb497ea4ebd1e218dd3e4c', function (err, res) {})
+sms.messaging.cancelMessage('6f19395db2fb497ea4ebd1e218dd3e4c', function (err, res) {})
 ```
 
 #### USP API

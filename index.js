@@ -14,9 +14,9 @@ function SMSGH (opts) {
 
   this.auth = new Auth(opts.clientId, opts.clientSecret)
   this.versionNumber = 'v3'
-  this.messageApi = new SendMessage(this.auth, this.versionNumber)
-  if (opts.topupApiKey) this.topUpApi = new TopUp(opts.topupApiKey)
-  if (opts.uspToken) this.uspApi = new USP(this.auth, opts.uspToken)
+  this.messaging = new SendMessage(this.auth, this.versionNumber)
+  if (opts.topupApiKey) this.topUp = new TopUp(opts.topupApiKey)
+  if (opts.uspToken) this.usp = new USP(this.auth, opts.uspToken)
 }
 
 SMSGH.prototype.setContextPath = function (versionNumber) {
@@ -25,7 +25,7 @@ SMSGH.prototype.setContextPath = function (versionNumber) {
   }
 
   this.versionNumber = versionNumber
-  this.messageApi.setContextPath(this.versionNumber)
+  this.messaging.setContextPath(this.versionNumber)
 }
 
 SMSGH.TopUp = TopUp
