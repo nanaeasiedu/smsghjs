@@ -30,5 +30,3 @@ node_modules
 .lock-wscript
 .settings
 dist/smsgh.debug.js
-
-test/example.js
