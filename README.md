@@ -1,4 +1,4 @@
-#SMSGHJS
+# SMSGHJS
 
 [![Build Status](https://secure.travis-ci.org/ngenerio/smsghjs.png?branch=master)](https://travis-ci.org/ngenerio/smsghjs)
 
@@ -6,18 +6,37 @@ SMSGHJS uses [JavaScript Standard Style](https://github.com/feross/standard)
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
-The Standard JavaScript SDK for SMSGH API.
+The Standard JavaScript and node.js SDK for SMSGH API.
 
 
-Still in development. You can check out the code and give reviews. I would appreciate that a lot. If there is any particular functionality you would like me to add just open an issue and I would check it out.
+Check out the [smsgh developers portal](http://developers.smsgh.com) to see all the related API. This library includes support for the Unified Services Payment, MESSAGING and TOP UP of the SMSGH API.
 
-Check out the [smsgh developers portal](http://developers.smsgh.com) to see all the related API. It includes support for the Unified Services Payment, MESSAGING and TOP UP of the SMSGH API.
+## Installation
 
-### Documentation
+### Node
 
-#### Create an `SMSGHJS` instance
+```sh
+npm install --save smsghjs
+```
+
+### Browser
+
+Download the [`smsgh.min.js`](https://github.com/ngenerio/smsghjs/blob/master/dist/smsgh.min.js) file in the `dist` folder. Place it in your project folder:
+
+```html
+<script src="smsgh.min.js"></script>
+```
+
+Or just add this line to your html file
+
+```html
+<script src="https://raw.githubusercontent.com/ngenerio/smsghjs/master/dist/smsgh.min.js"></script>
+```
+
+## Documentation
 
 ```javascript
+// Require the smsghjs lib
 var SMSGH = require('smsghjs');
 
 // get `clientId` and `clientSecret` from SMSGH
@@ -33,9 +52,9 @@ var sms  = new SMSGH({
 sms.setContextPath('v3')
 ```
 
-#### TOPUP
+## TOPUP
 
-## NOTE: The topup functionality will be deprecated soon. The same functionality is provided in the USP.
+### NOTE: The topup functionality will be deprecated soon. The same functionality is provided in the USP.
 
 If you provided the `topupApiKey` when you were initialising `sms`, then the top up API will be made available.
 
