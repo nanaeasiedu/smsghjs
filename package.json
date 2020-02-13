@@ -24,7 +24,7 @@
     ]
   },
   "dependencies": {
-    "superagent": "^1.2.0"
+    "superagent": "^5.2.1"
   },
   "devDependencies": {
     "browserify": "^10.2.0",
